@@ -86,7 +86,7 @@ class ProductItem extends HTMLElement {
 
     // Create the product image element
     const img = document.createElement('img');
-    img.setAttribute('src', data.image);
+    img.setAttribute('src', `assets/images/${data.image}`);
     img.setAttribute('alt', data.title);
     img.setAttribute('width', 200);
 
