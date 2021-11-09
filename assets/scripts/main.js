@@ -39,13 +39,15 @@ async function fetchItems() {
     } else {
       fetch(itemsURL)
         // Grab the response first, catch any errors here
-        .then(response => { console.log(response); response.json() })
+        .then(response => response.json())
         .catch(err => reject(err))
         // Grab the data next, cach errors here as well
         .then(data => {
-          localStorage.setItem('products', JSON.stringify(data));
-          items = data;
-          resolve();
+          if (data) {
+            localStorage.setItem('products', JSON.stringify(data));
+            items = data;
+            resolve();
+          }
         })
         .catch(err => reject(err));
     }
