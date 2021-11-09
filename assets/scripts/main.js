@@ -39,7 +39,7 @@ async function fetchItems() {
     } else {
       fetch(itemsURL)
         // Grab the response first, catch any errors here
-        .then(response => response.json())
+        .then(response => { console.log(response); response.json() })
         .catch(err => reject(err))
         // Grab the data next, cach errors here as well
         .then(data => {
