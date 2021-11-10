@@ -128,6 +128,10 @@ class ProductItem extends HTMLElement {
     this.shadowRoot.append(styles, wrapper);
   }
 
+  get data() {
+    return this.json;
+  }
+
   // Updates the item to show that it's already in the cart. Useful
   // for page reloads so you don't accidentally update the storage twice
   alreadyInCart() {
